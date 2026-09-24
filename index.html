@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111111">
+<meta name="description" content="CookReels V3 – Instagram-Rezepte speichern und automatisch aufbereiten.">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icons/icon-192.png">
+<title>CookReels V3 🍳</title>
+<style>
+:root{--bg:#f6f5f2;--card:#fff;--ink:#171717;--muted:#777;--line:#e9e6e0;--accent:#ff5a36;--accent2:#ff8a4d;--green:#238a57;--shadow:0 14px 40px rgba(0,0,0,.08)}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#fff 0,#f6f5f2 55%,#f2efe9 100%);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.app{max-width:720px;margin:auto;padding:18px 14px 44px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.brand{font-weight:900;font-size:25px;letter-spacing:-.7px}.brand span{color:var(--accent)}.sub{color:var(--muted);font-size:13px;margin-top:2px}.gear{border:0;background:#fff;border:1px solid var(--line);width:42px;height:42px;border-radius:14px;font-size:19px}
+.hero{background:#151515;color:white;border-radius:28px;padding:22px;box-shadow:var(--shadow);margin-bottom:16px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-70px;top:-90px;background:rgba(255,90,54,.28)}.hero h1{font-size:27px;line-height:1.08;margin:0 0 8px;max-width:500px}.hero p{color:#c9c9c9;margin:0 0 18px;font-size:14px;max-width:560px}.urlbox{display:flex;gap:8px;background:#252525;border:1px solid #3a3a3a;border-radius:16px;padding:8px}.urlbox input{min-width:0;flex:1;border:0;outline:0;background:transparent;color:#fff;font-size:14px;padding:0 8px}.btn{border:0;border-radius:13px;padding:12px 15px;font-weight:800;cursor:pointer}.primary{background:var(--accent);color:#fff}.secondary{background:#fff;color:#111}.ghost{background:#f2f2f2;color:#222}.status{font-size:13px;margin-top:11px;color:#cfcfcf;min-height:18px}.chips{display:flex;gap:8px;overflow:auto;padding:2px 1px 14px;scrollbar-width:none}.chip{white-space:nowrap;border:1px solid var(--line);background:#fff;padding:9px 13px;border-radius:999px;font-size:13px;font-weight:700}.chip.active{background:#171717;color:#fff;border-color:#171717}.toolbar{display:flex;justify-content:space-between;align-items:center;margin:4px 0 10px}.toolbar h2{font-size:18px;margin:0}.count{color:var(--muted);font-size:12px}.grid{display:grid;gap:12px}.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:15px;box-shadow:0 5px 18px rgba(0,0,0,.035);cursor:pointer}.cardtop{display:flex;justify-content:space-between;gap:10px}.tag{display:inline-flex;padding:6px 9px;border-radius:999px;background:#fff1ed;color:#c93f24;font-size:11px;font-weight:800}.heart{border:0;background:transparent;font-size:20px;padding:0}.card h3{margin:10px 0 6px;font-size:18px}.meta{color:var(--muted);font-size:12px;display:flex;gap:12px;flex-wrap:wrap}.empty{padding:35px 18px;text-align:center;color:var(--muted);border:1px dashed #d8d3ca;border-radius:20px;background:#fff}.modal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:flex-end;justify-content:center;z-index:20}.modal.show{display:flex}.sheet{width:min(720px,100%);max-height:92vh;overflow:auto;background:#fff;border-radius:28px 28px 0 0;padding:20px 16px 30px}.sheethead{display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:#fff;padding-bottom:10px;z-index:1}.close{border:0;background:#f0efec;border-radius:12px;width:40px;height:40px;font-size:20px}.recipehero{background:#151515;color:#fff;border-radius:22px;padding:20px;margin-bottom:16px}.recipehero h2{font-size:28px;line-height:1.05;margin:0 0 9px}.recipehero p{color:#cfcfcf;margin:0}.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0 20px}.fact{background:#f7f6f3;border-radius:14px;padding:11px}.fact b{display:block;font-size:15px}.fact span{font-size:11px;color:var(--muted)}.section{margin-top:20px}.section h3{margin:0 0 9px;font-size:17px}.ingredients{padding-left:19px;margin:0}.ingredients li{margin:7px 0}.steps{counter-reset:step;list-style:none;padding:0;margin:0}.steps li{counter-increment:step;display:flex;gap:11px;margin:12px 0;line-height:1.45}.steps li:before{content:counter(step);min-width:28px;height:28px;border-radius:10px;background:#171717;color:#fff;display:grid;place-items:center;font-weight:800;font-size:12px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.actions .btn{flex:1;min-width:140px}.note{background:#fff7e7;border:1px solid #f4dfb3;border-radius:15px;padding:12px;font-size:13px;color:#6f5b2b}.settings{display:none;margin:10px 0 16px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:15px}.settings.show{display:block}.settings input{width:100%;padding:11px;border:1px solid var(--line);border-radius:12px;margin-top:7px}.small{font-size:11px;color:var(--muted);line-height:1.4;margin-top:8px}.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#171717;color:#fff;padding:11px 15px;border-radius:999px;font-size:13px;display:none;z-index:50}.toast.show{display:block}
+@media(min-width:650px){.grid{grid-template-columns:1fr 1fr}.app{padding-top:28px}}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div><div class="brand">Cook<span>Reels</span> 🍳</div><div class="sub">Deine Instagram-Rezepte – jetzt mit Erkennung</div></div>
+    <button class="gear" id="settingsBtn" aria-label="Einstellungen">⚙️</button>
+  </header>
+
+  <section class="hero">
+    <h1>Instagram-Reel einfügen.<br>Rezept erkennen lassen.</h1>
+    <p>CookReels versucht Titel, Caption und Rezeptangaben aus einem öffentlichen Reel zu übernehmen und daraus eine saubere Rezeptkarte zu bauen.</p>
+    <div class="urlbox">
+      <input id="url" inputmode="url" autocomplete="off" placeholder="https://www.instagram.com/reel/..." />
+      <button class="btn primary" id="recognize">Erkennen</button>
+    </div>
+    <div class="status" id="status"></div>
+  </section>
+
+  <div class="settings" id="settings">
+    <b>V3 Einstellungen</b>
+    <div class="small">Optional: Wenn du einen eigenen OpenAI API-Key verwendest, bleibt er nur lokal auf diesem Gerät. Für die Cloudflare-Funktion wird stattdessen der Secret <b>OPENAI_API_KEY</b> im Cloudflare-Projekt verwendet.</div>
+    <button class="btn ghost" style="margin-top:10px" id="clearAll">Alle lokalen Rezepte löschen</button>
+  </div>
+
+  <div class="chips" id="chips"></div>
+  <div class="toolbar"><h2>Meine Rezepte</h2><div class="count" id="count"></div></div>
+  <main class="grid" id="list"></main>
+</div>
+
+<div class="modal" id="modal">
+  <div class="sheet">
+    <div class="sheethead"><b>Rezept</b><button class="close" id="close">×</button></div>
+    <div id="detail"></div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const KEY="cookreels_v3";
+const cats=["Alle","Pasta","Fleisch","Pizza","Salat","Frühstück","Dessert","Sonstiges"];
+let recipes=JSON.parse(localStorage.getItem(KEY)||"[]"), filter="Alle";
+
+const $=id=>document.getElementById(id);
+const save=()=>localStorage.setItem(KEY,JSON.stringify(recipes));
+const esc=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
+function toast(t){$("toast").textContent=t;$("toast").classList.add("show");setTimeout(()=>$("toast").classList.remove("show"),2200)}
+function renderChips(){ $("chips").innerHTML=cats.map(c=>`<button class="chip ${filter===c?"active":""}" data-cat="${esc(c)}">${esc(c)}</button>`).join(""); document.querySelectorAll(".chip").forEach(b=>b.onclick=()=>{filter=b.dataset.cat;render()})}
+function render(){
+  renderChips();
+  const arr=recipes.filter(r=>filter==="Alle"||r.category===filter);
+  $("count").textContent=`${arr.length} gespeichert`;
+  if(!arr.length){$("list").innerHTML=`<div class="empty">Noch kein Rezept gespeichert.<br><br>Füge oben einen Instagram-Reel-Link ein.</div>`;return}
+  $("list").innerHTML=arr.map(r=>`
+    <article class="card" data-id="${esc(r.id)}">
+      <div class="cardtop"><span class="tag">${esc(r.category||"Sonstiges")}</span><button class="heart" data-heart="${esc(r.id)}">${r.favorite?"♥":"♡"}</button></div>
+      <h3>${esc(r.title||"Unbenanntes Rezept")}</h3>
+      <div class="meta"><span>⏱ ${esc(r.time||"–")}</span><span>👤 ${esc(r.servings||"–")}</span><span>${r.source?"📱 Instagram":"✍️ Manuell"}</span></div>
+    </article>`).join("");
+  document.querySelectorAll(".card").forEach(c=>c.onclick=e=>{if(e.target.dataset.heart)return;openDetail(c.dataset.id)});
+  document.querySelectorAll("[data-heart]").forEach(b=>b.onclick=e=>{e.stopPropagation();let r=recipes.find(x=>x.id===b.dataset.heart);r.favorite=!r.favorite;save();render()});
+}
+function openDetail(id){
+ const r=recipes.find(x=>x.id===id);if(!r)return;
+ $("detail").innerHTML=`
+  <div class="recipehero"><span class="tag">${esc(r.category||"Sonstiges")}</span><h2>${esc(r.title)}</h2><p>${esc(r.summary||"Gespeichertes Instagram-Rezept")}</p></div>
+  <div class="facts"><div class="fact"><b>${esc(r.time||"–")}</b><span>Zeit</span></div><div class="fact"><b>${esc(r.servings||"–")}</b><span>Portionen</span></div><div class="fact"><b>${esc(r.level||"–")}</b><span>Level</span></div></div>
+  <div class="section"><h3>🥕 Zutaten</h3><ul class="ingredients">${(r.ingredients||[]).map(x=>`<li>${esc(x)}</li>`).join("")||"<li>Keine Zutaten erkannt.</li>"}</ul></div>
+  <div class="section"><h3>👨‍🍳 Zubereitung</h3><ol class="steps">${(r.steps||[]).map(x=>`<li>${esc(x)}</li>`).join("")||"<li>Keine Zubereitung erkannt.</li>"}</ol></div>
+  ${r.note?`<div class="section"><div class="note">💡 ${esc(r.note)}</div></div>`:""}
+  <div class="actions"><button class="btn primary" id="openInsta">Instagram öffnen</button><button class="btn ghost" id="share">Teilen</button><button class="btn ghost" id="del">Löschen</button></div>`;
+ $("modal").classList.add("show");
+ $("openInsta").onclick=()=>window.open(r.source,"_blank");
+ $("share").onclick=async()=>{const text=`${r.title}\n\nZutaten:\n${(r.ingredients||[]).join("\n")}\n\nZubereitung:\n${(r.steps||[]).join("\n")}`;try{if(navigator.share)await navigator.share({title:r.title,text,url:r.source});else{await navigator.clipboard.writeText(text);toast("Rezept kopiert")}}catch{}};
+ $("del").onclick=()=>{recipes=recipes.filter(x=>x.id!==r.id);save();$("modal").classList.remove("show");render();toast("Rezept gelöscht")};
+}
+$("close").onclick=()=>$("modal").classList.remove("show");
+$("modal").onclick=e=>{if(e.target===$("modal"))$("modal").classList.remove("show")};
+$("settingsBtn").onclick=()=>$("settings").classList.toggle("show");
+$("clearAll").onclick=()=>{if(confirm("Alle lokal gespeicherten Rezepte löschen?")){recipes=[];save();render();toast("Gelöscht")}};
+async function recognize(){
+ const url=$("url").value.trim();
+ if(!/^https?:\\/\\/(www\\.)?instagram\\.com\\/(reel|p)\\//i.test(url)){toast("Bitte einen Instagram-Reel-Link einfügen");return}
+ $("recognize").disabled=true;$("status").textContent="🔎 Reel wird geprüft und Rezept wird erkannt…";
+ try{
+   const res=await fetch("/api/recognize",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({url})});
+   const data=await res.json();
+   if(!res.ok)throw new Error(data.error||"Erkennung fehlgeschlagen");
+   const r={...data.recipe,id:crypto.randomUUID(),source:url,favorite:false,createdAt:Date.now()};
+   recipes.unshift(r);save();render();openDetail(r.id);$("url").value="";$("status").textContent="✅ Rezept erkannt und gespeichert.";toast("Rezept gespeichert");
+ }catch(e){$("status").textContent="⚠️ "+e.message;toast("Erkennung nicht möglich")}
+ finally{$("recognize").disabled=false}
+}
+$("recognize").onclick=recognize;
+$("url").addEventListener("keydown",e=>{if(e.key==="Enter")recognize()});
+render();
+if("serviceWorker" in navigator)navigator.serviceWorker.register("/sw.js").catch(()=>{});
+</script>
+</body>
+</html>
